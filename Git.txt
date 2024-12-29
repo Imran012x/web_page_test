@@ -1,0 +1,76 @@
+
+                                                               GIT-HUB
+>git init >ls -a [To check .git file] (>mkdir dir_name >touch file.txt >gedit file.txt)
+
+>git config --global user.name "Imran" >git config --global --list >git config --global --unset user.name "Imran"
+
+>git add . >git restore  >git rm --cached
+
+>git status or,git diff or,git log or,git log --oneline or,git show 71jd234
+
+>git commit -m “New file” >git reset --soft HEAD^ [Better:>git log --oneline>git cheackout 2jds24s][To get Back:git checkout master]
+
+>git remote -v(verbose) or,git remote add origin(nameOfTheRepository) remote_url [For PAT:Settings → Developer Settings → Personal Access Tokens → Tokens (classic)]
+
+>git push -u origin master[To rename master as main:>git branch -M main] >git pull or,git  clone  git@github.com:Imran012x/Algorithm.git
+
+>git branch name [>git branch -d name] >git checkout name (git checkout -b name) >git checkout master >git merge name (Fast Forward Merge/3 way Merge) >git push -u origin branch_name
+
+
+Alternative:
+>git init (In the local machine)
+>git config --global --unset user.name "Imran" or,manually from .gitcofig file.
+>git config --global alias.s "status" [git s->git status]
+>echo "# My Project" > README.md 
+>echo "Additional content" >> README.md  [It won't overwrite,rather append]
+>git add README.md    or, git add .  or,git add -A [To add all directories & subdirectories]
+>git commit -a -m "First commit"  [message] or,git commit -m "Add_Home" -m "Removed Issues #1" or,>git commit -am "First commit"(add&commit)
+>git branch -M Imran[main]  [git branch -M <old-branch-name> <new-branch-name>][renames the branch in your local repository]
+>git remote add Imran_Folder[origin] git@github.com:Imran012x/.git
+>git push -u  Imran_Folder[origin]   Imran[main]  [git push -u <remote> <branch>]
+>git status && git  clone  git@github.com:Imran012x/Algorithm.git
+>[Issues Resolved]
+>Merge Conflict Resolve[Suppose,master branch 3rd line and other branch 3rd line creates conflict at merge time]
+>Contribute other projects:1.Fork 2.Clone 3.Make pull request.
+>Collaboration & Rules set.
+>https://git-school.github.io/visualizing-git/
+
+
+
+*.log               # Ignore all .log files
+!.gitignore         # Do not ignore the .gitignore file itself
+*.env               # Ignore all .env files
+temp/               # Ignore the temp directory and its contents
+test*.txt           # Ignore files starting with test and ending in .txt
+**/*.bak            # Ignore all .bak files in any directory
+node_modules/       # Ignore the node_modules directory
+.vscode/            # Ignore the .vscode configuration directory
+*.~                 # Ignore all backup files ending with ~
+**/logs/*.log       # Ignore all .log files in any logs folder
+
+
+Comments: <!-- -->
+New line: double-space or <br>
+Horizontal rule: --- or ***
+Headings: # to ###### 
+Paragraph: Blank line or, <p> </p>
+Italics: *text* or _text_
+Bold: **text** or __text__
+Strikethrough: ~~text~~
+Inline code: `code`
+Code block: ```code``` or,```html  write_something ```
+Lists: 1., -, or - [ ]
+Links: [Text](URL)
+Images: ![alt](image_url)
+Emojis: :emoji:
+Table: | Header |
+Blockquotes: >
+Escape characters: \*
+Footnotes: [^1]
+Definition list: Term :
+Highlight: ==text==
+HTML: <HTML>
+Syntax highlight: ```language```
+Checkboxes: - [ ] or - [x]
+Anchor link: [Text](#anchor)
+                                               __________0000__________

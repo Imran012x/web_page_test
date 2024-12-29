@@ -1,50 +1,68 @@
+/* styles.css */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background: #333;
+    height: 100vh;
     margin: 0;
+    background: url('wall-painting.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
-.clock {
-    width: 300px;
-    height: 300px;
-    border: 10px solid white;
-    border-radius: 50%;
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.analog-clock {
     position: relative;
-    background: #222;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    width: 500px;
+    height: 500px;
+    border: 20px solid #444;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff 80%, #ccc);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
 }
 
 .clock-face {
     position: relative;
     width: 100%;
     height: 100%;
-    transform: translateY(-3px); /* Correct slight hand alignment */
+    transform: translateY(-3px);
 }
 
 .hand {
-    width: 50%;
-    height: 6px;
-    background: white;
     position: absolute;
-    top: 50%;
+    bottom: 50%;
     left: 50%;
-    transform-origin: 100%;
-    transform: rotate(90deg);
-    transition: all 0.05s cubic-bezier(0.4, 2.3, 0.3, 1);
-    transition-property: transform;
-}
-.hand.second-hand {
-    height: 2px;
-    background: red;
-}
-.hand.hour-hand {
-    width: 35%;
-    height: 8px;
-}
-.hand.minute-hand {
-    width: 45%;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(90deg);
+    background: #000;
+    border-radius: 10px;
 }
 
+.hour-hand {
+    width: 8px;
+    height: 120px;
+    background: #0077FF;
+}
+
+.minute-hand {
+    width: 5px;
+    height: 180px;
+    background: #00FF77;
+}
+
+.second-hand {
+    width: 3px;
+    height: 200px;
+    background: #FF0077;
+}
+
+.digital-clock {
+    margin-top: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}

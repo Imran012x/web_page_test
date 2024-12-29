@@ -12,7 +12,7 @@
 
 >git remote -v(verbose) or,git remote add origin(nameOfTheRepository) remote_url [For PAT:Settings → Developer Settings → Personal Access Tokens → Tokens (classic)]
 
->git push -u origin master[To rename master as main:>git branch -M main] >git pull or,git  clone  git@github.com:Imran012x/Algorithm.git
+>git push -u origin master[To rename master as main:>git branch -M main][>git config pull.rebase false] >git pull or,git  clone  git@github.com:Imran012x/Algorithm.git
 
 >git branch name [>git branch -d name] >git checkout name (git checkout -b name) >git checkout master >git merge name (Fast Forward Merge/3 way Merge) >git push -u origin branch_name
 

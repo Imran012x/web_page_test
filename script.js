@@ -1,29 +1,28 @@
-/* script.js */
-const hourHand = document.querySelector('.hour-hand');
-const minuteHand = document.querySelector('.minute-hand');
-const secondHand = document.querySelector('.second-hand');
-const digitalClock = document.getElementById('digital-clock');
-
-function updateClock() {
+function setClock() {
     const now = new Date();
-    const hours = now.getHours();
+    const hours = now.getHours() % 12; 
     const minutes = now.getMinutes();
     const seconds = now.getSeconds();
 
-    // Update analog clock
-    const hoursDeg = (hours % 12) * 30 + (minutes / 60) * 30;
-    const minutesDeg = minutes * 6 + (seconds / 60) * 6;
-    const secondsDeg = seconds * 6;
+    const hourDegrees = (hours * 30) + (minutes / 2); // 360 / 12 = 30 degrees per hour
+    const minuteDegrees = minutes * 6; // 360 / 60 = 6 degrees per minute
+    const secondDegrees = seconds * 6; // 360 / 60 = 6 degrees per second
 
-    hourHand.style.transform = `translateX(-50%) rotate(${hoursDeg}deg)`;
-    minuteHand.style.transform = `translateX(-50%) rotate(${minutesDeg}deg)`;
-    secondHand.style.transform = `translateX(-50%) rotate(${secondsDeg}deg)`;
+    document.querySelector('.hour-hand').style.transform = `rotate(${hourDegrees}deg)`;
+    document.querySelector('.minute-hand').style.transform = `rotate(${minuteDegrees}deg)`;
+    document.querySelector('.second-hand').style.transform = `rotate(${secondDegrees}deg)`;
 
-    // Update digital clock
-    const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-    digitalClock.textContent = formattedTime;
+    // Digital clock update
+    const digitalClock = document.getElementById('digital-clock');
+    let h = now.getHours();
+    let m = now.getMinutes();
+    let s = now.getSeconds();
+    let amPm = h >= 12 ? 'PM' : 'AM'; 
+    h = h % 12 || 12; // Convert to 12-hour format
+    h = h < 10 ? '0' + h : h;
+    m = m < 10 ? '0' + m : m;
+    s = s < 10 ? '0' + s : s;
+    digitalClock.textContent = `${h}:${m}:${s} ${amPm}`;
 }
 
-setInterval(updateClock, 1000);
-updateClock();
-
+setInterval(setClock, 1000);

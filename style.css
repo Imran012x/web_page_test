@@ -1,68 +1,81 @@
-/* styles.css */
 body {
+    font-family: sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background: url('wall-painting.jpg') no-repeat center center fixed;
-    background-size: cover;
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Example background color */
 }
 
-.clock-container {
+.container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; 
+    align-items: center; 
 }
 
-.analog-clock {
-    position: relative;
-    width: 500px;
-    height: 500px;
-    border: 20px solid #444;
+.clock {
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
-    background: radial-gradient(circle, #fff 80%, #ccc);
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    background-image: url("clock-face.jpg"); /* Replace with your image */
+    background-size: cover;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .clock-face {
-    position: relative;
     width: 100%;
     height: 100%;
-    transform: translateY(-3px);
+    position: relative;
 }
 
 .hand {
     position: absolute;
     bottom: 50%;
-    left: 50%;
-    transform-origin: bottom;
-    transform: translateX(-50%) rotate(90deg);
-    background: #000;
-    border-radius: 10px;
+    transform-origin: 50% 100%; 
+    transform: rotate(90deg); /* Start all hands pointing upwards */
 }
 
 .hour-hand {
-    width: 8px;
-    height: 120px;
-    background: #0077FF;
+    width: 6px;
+    height: 60px;
+    background-color: #333; 
+    left: 50%;
+    margin-left: -3px; 
 }
 
 .minute-hand {
-    width: 5px;
-    height: 180px;
-    background: #00FF77;
+    width: 4px;
+    height: 80px;
+    background-color: #666; 
+    left: 50%;
+    margin-left: -2px; 
 }
 
 .second-hand {
-    width: 3px;
-    height: 200px;
-    background: #FF0077;
+    width: 2px;
+    height: 100px;
+    background-color: #f00; 
+    left: 50%;
+    margin-left: -1px; 
 }
 
-.digital-clock {
-    margin-top: 20px;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #fff;
+.center-point {
+    width: 10px;
+    height: 10px;
+    background-color: #333;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+#digital-clock {
+    font-size: 2em; 
+    margin-top: 20px; 
+    padding: 10px; 
+    background-color: #fff; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
